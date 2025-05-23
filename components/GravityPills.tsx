@@ -65,7 +65,7 @@ const PILL_CONFIG: PillConfig[] = [
   },
 ];
 
-export default function GravityPills(): JSX.Element {
+export default function GravityPills() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const pillsRef = useRef<Array<HTMLDivElement | null>>([]);
 

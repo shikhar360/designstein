@@ -37,7 +37,7 @@ export default function FlipCard() {
 
       const smallScreenWidth = window.innerWidth < 743 ? true : false;
       const position = smallScreenWidth ? [ 28, 28, 72, 72] :[14, 38, 62, 86];
-      const positionY = smallScreenWidth ? [65 , 35 , 65, 35] : [50, 50, 50, 50];
+      const positionY = smallScreenWidth ? [68 , 32 , 68, 32] : [50, 50, 50, 50];
       const rotation = [-15, -7.5, 7.5, 15];
 
       const smallerWindowPositionX =[ 38, 62, 38, 62]

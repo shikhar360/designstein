@@ -1,0 +1,173 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import Card from "./ServiceCard";
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactLenis } from "lenis/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface cardConfig {
+  text: string;
+}
+
+export default function FlipCard() {
+  const lenisRef = useRef<React.ElementRef<typeof ReactLenis>>(null);
+  const container = useRef<HTMLDivElement | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+
+    return () => gsap.ticker.remove(update);
+  }, []);
+
+  useGSAP(
+    () => {
+      const cards = cardRefs.current;
+      const totalScrollHeight = window.innerHeight * 3;
+      const position = [14, 38, 62, 86];
+      const rotation = [-15, -7.5, 7.5, 15];
+
+      //pinning
+
+      ScrollTrigger.create({
+        trigger: container.current?.querySelector(".cards-new"),
+        start: "top top",
+        end: () => `+=${totalScrollHeight}`,
+        pin: true,
+        pinSpacing: true,
+      });
+
+      //spreading and moving cards
+
+      cards.forEach((card, index) => {
+        gsap.to(card, {
+          left: `${position[index]}%`,
+          rotation: `${rotation[index]}`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container.current?.querySelector(".cards-new"),
+            start: "top top",
+            end: () => `+=${window.innerHeight}`,
+            scrub: 0.5,
+            id: `spread-${index}`,
+          },
+        });
+      });
+
+      //rotating cards on scroll
+
+      cards.forEach((card, index) => {
+        const frontEl = card?.querySelector(".flip-card-front");
+        const backEl = card?.querySelector(".flip-card-back");
+        const staggerOffset = index * 0.05;
+        const startOffset = 1 / 3 + staggerOffset;
+        const endOffset = 2 / 3 + staggerOffset;
+
+        ScrollTrigger.create({
+          trigger: container.current?.querySelector(".cards-new"),
+          start: "top top",
+          end: () => `+=${totalScrollHeight}`,
+          scrub: 1,
+          id: `rotate-flip-${index}`,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            if (progress >= startOffset && progress <= endOffset) {
+              const animationProgress = (progress - startOffset) / (1 / 3);
+              const frontRotation = -180 * animationProgress;
+              const backRotation = 180 - 180 * animationProgress;
+              const cardRotation = rotation[index] * (1 - animationProgress);
+
+              if (frontEl) {
+                gsap.to(frontEl, {
+                  rotateY: frontRotation,
+                  ease: "power1.out",
+                });
+              }
+              if (backEl) {
+                gsap.to(backEl, { rotateY: backRotation, ease: "power1.out" });
+              }
+
+              if (card) {
+                gsap.to(card, {
+                  xPercent: -50,
+                  yPercent: -50,
+                  rotate: cardRotation,
+                  ease: "power1.out",
+                });
+              }
+            }
+          },
+        });
+      });
+    },
+    { scope: container }
+  );
+
+  useEffect(() => {
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  const card_config: cardConfig[] = [
+    {
+      text: "Landing Pages",
+    },
+    {
+      text: "Logo Design , DesignSystem",
+    },
+    {
+      text: "CopyWriting  , UI UX",
+    },
+    {
+      text: "Code Devlopment , No-Code",
+    },
+  ];
+  return (
+    <div ref={container} className={`container-new box-border `}>
+      {/* <section className="hero h-[100vh] w-full bg-purple-300  relative">
+        <h1
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl `}
+        >
+          hero is here
+        </h1>
+      </section> */}
+      <div className={`absolute  text-base mt-20 w-full `}>
+          <h2 className={` mx-10 md:mx-32 font-normal md:text-3xl text-2xl `}>Services we offer</h2>
+          <p
+            className={`max-w-[80vw] border border-dashed border-white/40 mx-10 md:mx-32`}
+          />
+        </div>
+      <section className="cards-new h-[100vh] w-full  relative">
+        {card_config.map(({ text }, index) => (
+          <Card
+            key={index}
+            id={` card-${index + 1}`}
+            frontSrc="/image.jpg"
+            frontAlt="Card Image"
+            backText={text}
+            ref={(el) => {
+              cardRefs.current[index] = el;
+            }}
+          />
+        ))}
+      </section>
+      {/* <section className="footer h-[100vh] w-full bg-blue-400 relative">
+        <h1
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl `}
+        >
+          Footer or Upcoming Section
+        </h1>
+      </section> */}
+    </div>
+  );
+}

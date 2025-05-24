@@ -19,7 +19,7 @@ export default function Benefits() {
         {/* Card 1 */}
         <div className="flex flex-col items-center justify-between py-8 px-6 bg-transparent rounded-xl  backdrop-blur-custom shadow-white  min-h-[420px] z-20  ">
           <div >
-            <h2 className="">
+            <h2 className="text-[1.55rem]   mb-[1.1vw] text-white tracking-[0.01em]">
               Subscribe or Request
             </h2>
             <div className="text-white text-[1.05rem] leading-[1.6]">

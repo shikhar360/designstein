@@ -37,14 +37,14 @@ export default function Hero() {
   return (
     <div
       className={`
-        bg-[url("/asset/hero/slide.jpg")] bg-no-repeat bg-cover bg-center 
+        md:bg-[url("/asset/hero/slide.jpg")] bg-[url("/mobslide.jpg")] bg-no-repeat bg-cover bg-center 
          `}
     >
       <div
         className={`font-inter flex flex-col md:items-center items-start justify-center  gap-2 w-full  md:gap-1 min-h-[70vh] md:min-h-screen  `}
       >
         <div
-          className={`w-full flex flex-col items-start justify-start md:items-center  px-16 md:px-32 gap-3`}
+          className={`w-full flex flex-col items-start justify-start md:items-center  px-12 md:px-32 gap-3`}
         >
           <SparkleSVG
             size={"md:h-[80px] md:w-[80px] w-[60px] h-[60px]"}
@@ -79,7 +79,7 @@ export default function Hero() {
           </h1>
         </div>
         <div className="flex justify-start w-full md:justify-center ">
-          <p className=" px-16 md:px-32 text-[.7rem] md:text-[1.125rem] leading-[1.5] text-white/80 font-medium tracking-[0.01em] md:text-center text-start max-w-[900px] md:my-6 ">
+          <p className=" px-12 md:px-32 text-[.7rem] md:text-[1.125rem] leading-[1.5] text-white/80 font-medium tracking-[0.01em] md:text-center text-start max-w-[900px] md:my-6 ">
             – We don’t just design websites, We engineer it with Einstein-level
             precision
           </p>
@@ -87,13 +87,13 @@ export default function Hero() {
         <div className="flex flex-row items-center justify-center w-full gap-2 mt-8 md:mt-4 ">
           <Link
             href={"#book"}
-            className="md:px-[.8rem] shadow-custom-black  px-[.7rem] no-underline font-spacemono py-[0.95rem] border-none rounded-[0.375rem] bg-orange-500 text-white cursor-pointer   md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-orange-400"
+            className="md:px-[.8rem] shadow-custom-black  px-[1.4rem] no-underline font-spacemono py-[0.95rem] border-none rounded-[0.375rem] bg-orange-500 text-white cursor-pointer   md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-orange-400"
           >
             Let&apos;s Designstein
           </Link>
           <Link
             href={"#samplework"}
-            className=" scroll-smooth  md:px-[2.5rem] px-[1.9rem] font-spacemono py-[0.95rem] border-dashed border-[#fff]/10 no-underline bg-black/5 backdrop-blur-custom rounded-[0.375rem] cursor-pointer  text-white  md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-[#181818]"
+            className=" scroll-smooth  md:px-[2.5rem] px-[2.6rem] font-spacemono py-[0.95rem] border-dashed border-[#fff]/10 no-underline bg-black/5 backdrop-blur-custom rounded-[0.375rem] cursor-pointer  text-white  md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-[#181818]"
           >
             Recent Work
           </Link>

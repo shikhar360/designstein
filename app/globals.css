@@ -18,8 +18,10 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 
 @layer components {
   html {
@@ -29,7 +31,6 @@ body {
     color: "#FEE0D7";
   }
 
- 
   .backdrop-blur-custom {
     backdrop-filter: blur(5px);
   }
@@ -41,13 +42,12 @@ body {
     box-shadow: inset 0 0 10px #00000060;
   }
 
-
   /* can be rmoved animated cards */
   .card {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     will-change: transform;
     width: 25%;
     height: 50%;
@@ -59,17 +59,51 @@ body {
     /* color: #fff; */
   }
 
-  card-img {
-    flex: 1 1 0;
-    min-height: 0;
-    width: 100%;
-  }
-  card-content {
-    flex: 0 0 12px;
-    display: flex;
-    align-items: center;
+  
+
+  #card-1 .card-wrapper {
+    animation-delay: 0;
   }
 
+  #card-2 .card-wrapper {
+    animation-delay: 0.2s;
+  }
+  #card-3 .card-wrapper {
+    animation-delay: 0.4s;
+  }
+
+  #card-4 .card-wrapper {
+    animation-delay: 0.6s;
+  }
+
+   img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+   }
+
+   .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+   }
+
+   .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+   }
+
+   .flip-card-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+   }
+
+
+   
   .custom-shape-divider-top-1747908386 {
     position: absolute;
     bottom: 0;
@@ -77,5 +111,17 @@ body {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-}
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, -60%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
 }

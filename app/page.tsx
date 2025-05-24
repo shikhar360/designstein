@@ -5,13 +5,14 @@ import FAQSection from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import GravityPills from "@/components/GravityPills";
 import Hero from "@/components/Hero";
-
+import FlipCard from "@/components/FlipCard";
 
 export default function Home() {
   return (
-     <div className={`w-full flex flex-col  overflow-hidden scrollbar-hide`}>
+    <div className={`w-full flex flex-col   scrollbar-hide`}>
       <Hero />
-      <GravityPills />
+      {/* <GravityPills /> */}
+      <FlipCard />
       <Benefits />
       <CardAnimated />
       <Calender />

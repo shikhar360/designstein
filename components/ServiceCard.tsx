@@ -17,7 +17,7 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, backT
     >
       <div className="card-wrapper absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full animate-[floating_3s_ease-in-out_infinite]">
         <div className="flip-card-inner  ">
-          <div className="flip-card-front  absolute w-full h-full backface-hidden   rounded-md overflow-hidden">
+          <div className="flip-card-front [-webkit-text-stroke:0.5px_#9e9e9e] absolute w-full h-full backface-hidden   rounded-xl overflow-hidden">
             <Image
               priority
               src={frontSrc}
@@ -26,9 +26,9 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, backT
               className=""
             />
           </div>
-          <div className="flip-card-back absolute w-full h-full backface-hidden  rounded-md overflow-hidden bg-[url('/mobslide.jpg')] rotate-y-180 ">
+          <div className="flip-card-back absolute w-full h-full backface-hidden  rounded-xl shadow-white overflow-hidden bg-gradient-to-br to-[#de5c00] from-[#fa9214] rotate-y-180 ">
             <p
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl text-center`}
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center w-full  px-5 `}
             >
               {backText}
             </p>

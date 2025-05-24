@@ -5,6 +5,8 @@ import SparkleSVG from "./SparkleSVG";
 import Link from "next/link";
 import Carousels from "./Carousels";
 
+import Copy from "./Copy";
+
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
 
@@ -55,12 +57,11 @@ export default function Hero() {
           >
             <div
               className={`w-3 h-3 bg-green-400 animate-ping rounded-full  `}
-            >
-            </div>
-              <div
-                className={`w-2 h-2 bg-green-400 animate-pulse  rounded-full absolute top-1/2 left-1.5 -translate-y-1/2  -translate-x-1/2 `}
-              />
-            Taking Calls for {month[d.getMonth()]}
+            ></div>
+            <div
+              className={`w-2 h-2 bg-green-400 animate-pulse  rounded-full absolute top-1/2 left-1.5 -translate-y-1/2  -translate-x-1/2 `}
+            />
+            <Copy delay={0.5}> <span> Taking Calls for {month[d.getMonth()]}</span></Copy>
           </div>
           <h1 className=" md:text-[4.5rem] xl:text-[5.3rem] my-1.5 text-[2rem] leading-[1.1] font-normal md:tracking-[-0.01em] xl:tracking-[0.01em] md:text-center text-start text-[#FEE0D7]  xl:mb-6 px-1  ">
             <span className="">Designing Websites</span>

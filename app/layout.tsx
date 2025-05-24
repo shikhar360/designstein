@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide`}
       >
-        <ReactLenis root>
+        <ReactLenis root options={{duration: 3}}>
           <Navbar />
           {children}
         </ReactLenis>

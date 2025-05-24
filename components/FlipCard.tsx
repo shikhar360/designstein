@@ -120,20 +120,20 @@ export default function FlipCard() {
 
   const card_config: cardConfig[] = [
     {
-      text: "Landing Pages",
+      text: "Landing Pages Product Design",
     },
     {
-      text: "Logo Design , DesignSystem",
+      text: "Logo Design  DesignSystem",
     },
     {
-      text: "CopyWriting  , UI UX",
+      text: "CopyWriting  UI UX",
     },
     {
-      text: "Code Devlopment , No-Code",
+      text: "Code + No-Code Devlopment",
     },
   ];
   return (
-    <div ref={container} className={`container-new box-border `}>
+    <div ref={container} className={`container-new box-border  px-10 `}>
       {/* <section className="hero h-[100vh] w-full bg-purple-300  relative">
         <h1
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl `}

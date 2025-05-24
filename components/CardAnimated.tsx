@@ -12,7 +12,7 @@ export const CardAnimated = () => {
    
    useEffect(() => {
     function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 1000)
+      lenisRef.current?.lenis?.raf(time * 2000)
     }
   
     gsap.ticker.add(update)
@@ -114,7 +114,7 @@ export const CardAnimated = () => {
   }, []);
 
   return (
-    <section className="w-[100vw]   h-[100vh] sticky-cards bg-[#121212] overflow-hidden">
+    <section className="w-[100vw]   h-[100vh] sticky-cards bg-[#121212] overflow-hidden relative">
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
       {/* <Particles /> */}
       <div className="absolute z-10 min-w-[80vw] mt-20 top-10 md:left-32 left-10 font-inter ">

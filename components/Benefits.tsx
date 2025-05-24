@@ -1,9 +1,13 @@
+import Copy from "./Copy";
+
 export default function Benefits() {
   return (
-    <section className="relative flex flex-col items-start justify-start max-w-full min-h-screen px-10 md:py-40 py-20 overflow-x-hidden md:px-32 font-inter bg-[#1c1c1c]">
+    <section className="relative mx-0 flex flex-col items-start justify-start w-screen  overflow-x-hidden min-h-screen px-10 md:py-40 py-20  md:px-32 font-inter bg-[#1c1c1c] ">
       <div className="z-20 w-full ">
+        <Copy>
         <h2 className={`text-xl font-light `}> The exceptional way of working</h2> 
-        <span className="block max-w-[80vw] border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        <span className="block md:max-w-[80vw] border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        </Copy>
       </div>
 
       
@@ -15,10 +19,11 @@ export default function Benefits() {
 
 
       {/* Card grid */}
-      <div className="grid w-full grid-cols-1 gap-4 py-32 mt-20 md:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-4 py-32 mt-20 md:grid-cols-3 mx-0">
         {/* Card 1 */}
         <div className="flex flex-col items-center justify-between py-8 px-6 bg-transparent rounded-xl  backdrop-blur-custom shadow-white  min-h-[420px] z-20  ">
           <div >
+            <Copy>
             <h2 className="text-[1.55rem]   mb-[1.1vw] text-white tracking-[0.01em]">
               Subscribe or Request
             </h2>
@@ -39,6 +44,7 @@ export default function Benefits() {
                 </ul>
               </div>
             </div>
+            </Copy>
           </div>
           {/* Star Icon */}
           <div className="flex justify-center mt-[2.5vw]">
@@ -49,6 +55,7 @@ export default function Benefits() {
         {/* Card 2 */}
         <div className=" flex flex-col justify-between py-8 px-6 bg-transparent rounded-xl  backdrop-blur-custom shadow-white   min-h-[420px] z-20 ">
           <div>
+            <Copy>
             <h2 className="text-[1.55rem]   mb-[1.1vw] text-white tracking-[0.01em]">
               48-Hour Updates
             </h2>
@@ -65,6 +72,7 @@ export default function Benefits() {
                 </ul>
               </div>
             </div>
+            </Copy>
           </div>
           {/* Clock Icon */}
           <div className="flex justify-center mt-[2.5vw]">
@@ -75,6 +83,7 @@ export default function Benefits() {
         {/* Card 3 */}
         <div className="flex flex-col justify-between py-8 px-6 bg-transparent rounded-xl  backdrop-blur-custom shadow-white   min-h-[420px] z-20 ">
           <div>
+            <Copy>
             <h2 className="text-[1.55rem]  mb-[1.1vw] text-white tracking-[0.01em]">
               Approval and Repeat
             </h2>
@@ -88,6 +97,7 @@ export default function Benefits() {
                 </ul>
               </div>
             </div>
+            </Copy>
           </div>
           {/* Repeat Icon */}
           <div className="flex justify-center mt-[2.5vw]">

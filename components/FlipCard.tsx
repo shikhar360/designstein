@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis } from "lenis/react";
+import Copy from "./Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,8 +34,14 @@ export default function FlipCard() {
     () => {
       const cards = cardRefs.current;
       const totalScrollHeight = window.innerHeight * 3;
-      const position = [14, 38, 62, 86];
+
+      const smallScreenWidth = window.innerWidth < 743 ? true : false;
+      const position = smallScreenWidth ? [ 28, 28, 72, 72] :[14, 38, 62, 86];
+      const positionY = smallScreenWidth ? [65 , 35 , 65, 35] : [50, 50, 50, 50];
       const rotation = [-15, -7.5, 7.5, 15];
+
+      const smallerWindowPositionX =[ 38, 62, 38, 62]
+      const smallerWindowPositionY =[30 , 60 , 30, 60]
 
       //pinning
 
@@ -51,6 +58,7 @@ export default function FlipCard() {
       cards.forEach((card, index) => {
         gsap.to(card, {
           left: `${position[index]}%`,
+          top: `${positionY[index]}%`,
           rotation: `${rotation[index]}`,
           ease: "none",
           scrollTrigger: {
@@ -133,7 +141,7 @@ export default function FlipCard() {
     },
   ];
   return (
-    <div ref={container} className={`container-new box-border  px-10 `}>
+    <div ref={container} className={`container-new box-border mx-0  `}>
       {/* <section className="hero h-[100vh] w-full bg-purple-300  relative">
         <h1
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl `}
@@ -142,11 +150,15 @@ export default function FlipCard() {
         </h1>
       </section> */}
       <div className={`absolute  text-base mt-20 w-full `}>
-          <h2 className={` mx-10 md:mx-32 font-normal md:text-3xl text-2xl `}>Services we offer</h2>
+        <Copy>
+          <h2 className={` mx-10 md:mx-32 font-normal md:text-3xl text-2xl `}>
+            Services we offer
+          </h2>
           <p
             className={`max-w-[80vw] border border-dashed border-white/40 mx-10 md:mx-32`}
           />
-        </div>
+        </Copy>
+      </div>
       <section className="cards-new h-[100vh] w-full  relative">
         {card_config.map(({ text }, index) => (
           <Card

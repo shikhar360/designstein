@@ -11,7 +11,7 @@ interface Iprops {
 const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, backText }, ref) => {
   return (
     <div
-      className="card-new perspective-[1000px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  md:h-[360px] md:w-[240px]  h-[250px] w-[170px]"
+      className="card-new perspective-[1000px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  md:h-[360px] md:w-[240px]  h-[225px] w-[150px]"
       id={id}
       ref={ref}
     >
@@ -28,7 +28,7 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, backT
           </div>
           <div className="flip-card-back absolute w-full h-full backface-hidden  rounded-xl shadow-white overflow-hidden bg-gradient-to-br to-[#de5c00] from-[#fa9214] rotate-y-180 ">
             <p
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center w-full  px-5 `}
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 font-inter -translate-y-1/2 md:text-2xl text-md text-[#FEE0D7] text-center w-full  px-5 `}
             >
               {backText}
             </p>

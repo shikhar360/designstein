@@ -8,11 +8,17 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
-  const containerRef = useRef(null);
-  const elementRef = useRef([]);
-  const splitRef = useRef([]);
-  const lines = useRef([]);
+interface CopyProps {
+  children: React.ReactElement | React.ReactNode;
+  animateOnScroll?: boolean;
+  delay?: number;
+}
+
+export default function Copy({ children, animateOnScroll = true, delay = 0 }: CopyProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const elementRef = useRef<Element[]>([]);
+  const splitRef = useRef<any[]>([]);
+  const lines = useRef<HTMLElement[]>([]);
   useGSAP(
     () => {
       if (!containerRef.current) return;
@@ -41,12 +47,12 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         const textIndent = computedStyle.textIndent;
         if (textIndent && textIndent !== "Opx") {
           if (split.lines.length > 0) {
-            split.lines[0].style.paddingLeft = textIndent;
+            (split.lines[0] as HTMLElement).style.paddingLeft = textIndent;
           }
 
-          element.style.textIndent = "0px";
+          (element as HTMLElement).style.textIndent = "0px";
         }
-        lines.current.push(...split.lines);
+        lines.current.push(...(split.lines as HTMLElement[]));
       });
 
       gsap.set(lines.current, { y: "100%" });
@@ -85,8 +91,8 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
     }
   );
 
-  if (React.Children.count(children) === 1) {
-    return React.cloneElement(children, { ref: containerRef });
+  if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    return React.cloneElement(children as React.ReactElement<any>, { ref: containerRef });
   }
 
   return (

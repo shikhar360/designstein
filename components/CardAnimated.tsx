@@ -3,22 +3,23 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Particles from "./Particle/page";
-import { ReactLenis } from 'lenis/react'
+import { ReactLenis } from "lenis/react";
+import Copy from "./Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const CardAnimated = () => {
-   const lenisRef = useRef<React.ElementRef<typeof ReactLenis>>(null)
-   
-   useEffect(() => {
+  const lenisRef = useRef<React.ElementRef<typeof ReactLenis>>(null);
+
+  useEffect(() => {
     function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 2000)
+      lenisRef.current?.lenis?.raf(time * 2000);
     }
-  
-    gsap.ticker.add(update)
-  
-    return () => gsap.ticker.remove(update)
-  }, [])
+
+    gsap.ticker.add(update);
+
+    return () => gsap.ticker.remove(update);
+  }, []);
   const procedures: { intro: string; descrip: string }[] = [
     {
       intro: "Intro",
@@ -114,18 +115,19 @@ export const CardAnimated = () => {
   }, []);
 
   return (
-    <section className="w-[100vw]   h-[100vh] sticky-cards bg-[#121212] overflow-hidden relative">
+    <section className="w-screen overflow-x-hidden  min-h-screen sticky-cards bg-[#121212]  scrollbar-hide  relative">
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
       {/* <Particles /> */}
       <div className="absolute z-10 min-w-[80vw] mt-20 top-10 md:left-32 left-10 font-inter ">
-        <h2 className={`md:text-xl text-lg font-light text-end `}>
-          Timeline & Procedural way of working
-        </h2>
-        <span className="block max-w-[80vw] border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        <Copy>
+          <h2 className={`md:text-xl text-lg font-light text-end `}>
+            Timeline & Procedural way of working
+          </h2>
+          <span className="block md:max-w-[80vw] border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        </Copy>
       </div>
 
       <div className="sm:w-60 w-48 h-48 sm:h-60 animate-move rounded-full bg-gradient-to-tl from-orange-800 from-0% via-orange-500 via-50% to-orange-600 to-100% absolute  -bottom-10 -left-10  z-0"></div>
-
 
       {procedures.map((steps, idx) => (
         <div key={idx} className="z-20 card">

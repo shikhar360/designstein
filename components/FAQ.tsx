@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 // import { Minus, Plus } from "lucide-react";
 import gsap from "gsap";
+import Copy from "./Copy";
 
 const faqs = [
   {
@@ -85,15 +86,23 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className={`w-screen min-h-screen flex flex-col font-inter items-start justify-start ]`}>
+    <section
+      id="faq"
+      className={`w-screen min-h-screen flex flex-col font-inter items-start justify-start `}
+    >
       <div className="z-20 flex flex-col min-w-[80vw] mt-20 mx-auto">
-        <div className={`text-xl font-light `}> FAQs</div>
-        <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        <Copy>
+          <div className={`text-xl font-light `}> FAQs</div>
+          <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        </Copy>
       </div>
       <div className="flex flex-col items-center justify-center w-full py-20">
         <div className="">
           {faqs.map((faq, index) => (
-            <div key={index} className="flex flex-col gap-2 mb-2  select-none md:min-w-[50vw] min-w-[80vw] ">
+            <div
+              key={index}
+              className="flex flex-col gap-2 mb-2  select-none md:min-w-[50vw] min-w-[80vw] "
+            >
               <div className="flex justify-end md:justify-end">
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -105,14 +114,27 @@ export default function FAQSection() {
                   >
                     {openIndexes.includes(index) ? (
                       // <Minus className="w-5 h-5 text-orange-400 bg-white rounded-full" />
-                      <img width="10" height="10" src="https://img.icons8.com/ios-glyphs/30/ff9800/minus-math.png" alt="plus-math"/>
-
+                      <img
+                        width="10"
+                        height="10"
+                        src="https://img.icons8.com/ios-glyphs/30/ff9800/minus-math.png"
+                        alt="plus-math"
+                      />
                     ) : (
                       // <Plus className="w-5 h-5 text-orange-400 bg-white rounded-full" />
-                      <img width="10" height="10" src="https://img.icons8.com/ios-glyphs/30/ff9800/plus-math.png" alt="plus-math"/>
+                      <img
+                        width="10"
+                        height="10"
+                        src="https://img.icons8.com/ios-glyphs/30/ff9800/plus-math.png"
+                        alt="plus-math"
+                      />
                     )}
                   </div>
-                  <div className="p-4 text-base font-medium text-right text-white bg-orange-400 rounded-2xl ">{faq.question}</div>
+                  <Copy>
+                    <div className="p-4 text-base font-medium text-right text-white bg-orange-400 rounded-2xl ">
+                      {faq.question}
+                    </div>
+                  </Copy>
                 </button>
               </div>
               <div

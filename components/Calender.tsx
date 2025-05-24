@@ -8,6 +8,7 @@
 "use client";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import Copy from "./Copy";
 export default function Calender() {
   useEffect(() => {
     (async function () {
@@ -41,21 +42,25 @@ export default function Calender() {
   ];
   return (
     <div
-      className={`w-full min-h-screen flex flex-col font-inter gap-8 items-center justify-center bg-[#1c1c1c] pb-20 `}
+      className={`w-full overflow-x-hidden min-h-screen flex flex-col font-inter gap-8 items-center justify-center bg-[#1c1c1c] pb-20 `}
       id="book"
     >
       <div className="z-20 flex flex-col min-w-[80vw] my-20 mx-auto">
-        <div className={`text-xl font-light `}>
-          Taking calls for {month[d.getMonth()]}
-        </div>
-        <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        <Copy>
+          <div className={`text-xl font-light `}>
+            Taking calls for {month[d.getMonth()]}
+          </div>
+          <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
+        </Copy>
       </div>
-      <Cal
-        namespace="30min"
-        calLink="letsdesignstein/30min"
-        style={{ width: "100%", height: "100%", overflow: "scroll" }}
-        config={{ layout: "month_view", theme: "dark" }}
-      />
+      <div className={`md:w-full md:h-full mx-auto w-[75vw] h-[75vh]`}>
+        <Cal
+          namespace="30min"
+          calLink="letsdesignstein/30min"
+          style={{ width: "100%", height: "100%", overflow: "scroll" }}
+          config={{ layout: "month_view", theme: "dark" }}
+        />
+      </div>
     </div>
   );
 }

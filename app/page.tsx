@@ -9,7 +9,7 @@ import FlipCard from "@/components/FlipCard";
 
 export default function Home() {
   return (
-    <div className={`w-full flex flex-col   scrollbar-hide`}>
+    <div className={`w-full flex flex-col overflow-x-hidden  scrollbar-hide`}>
       <Hero />
       {/* <GravityPills /> */}
       <FlipCard />

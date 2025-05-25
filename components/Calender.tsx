@@ -14,13 +14,13 @@ export default function Calender() {
     (async function () {
       const cal = await getCalApi({ namespace: "30min" });
       cal("ui", {
-        theme: "dark",
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#5b5b5b" },
-          dark: { "cal-brand": "#ff8900" },
+        'theme': "dark",
+        'cssVarsPerTheme': {
+          'light': { "cal-brand": "#5b5b5b" },
+          'dark': { "cal-brand": "#ff8900" },
         },
-        hideEventTypeDetails: false,
-        layout: "month_view",
+        'hideEventTypeDetails': false,
+        'layout': "month_view",
       });
     })();
   }, []);

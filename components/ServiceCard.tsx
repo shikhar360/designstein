@@ -27,9 +27,9 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, obj }
               className=""
             />
           </div>
-          <div className="flip-card-back absolute w-full h-full backface-hidden md:px-5 px-3  rounded-xl shadow-white overflow-hidden font-inter md:gap-3 gap-2 bg-orange-500 rotate-y-180 flex flex-col items-center justify-center">
+          <div className="flip-card-back absolute w-full h-full backface-hidden md:px-5 px-3  rounded-xl shadow-white overflow-hidden font-inter md:gap-3 gap-2 bg-[#fc8c14]  rotate-y-180 flex flex-col items-center justify-center">
             <p
-              className={` md:text-2xl text-md text-start `}
+              className={` md:text-2xl text-md text-start text-white font-bold`}
             >
               {obj.heading}
             </p>

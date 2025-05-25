@@ -95,13 +95,13 @@ export default function Hero() {
         <div className="flex flex-row items-center justify-center w-full gap-2 mt-8 md:mt-4 ">
           <Link
             href={"#book"}
-            className="md:px-[.8rem] shadow-custom-black  px-[1.4rem] no-underline font-spacemono py-[0.95rem] border-none rounded-[0.375rem] bg-orange-500 text-white cursor-pointer   md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-orange-400"
+            className="md:px-[.8rem]   px-[1.4rem] no-underline font-spacemono py-[0.95rem] border-none rounded-[0.375rem] bg-orange-400 text-white cursor-pointer   md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-orange-400"
           >
             Let&apos;s Designstein
           </Link>
           <Link
             href={"#samplework"}
-            className=" scroll-smooth  md:px-[2.5rem] px-[2.6rem] font-spacemono py-[0.95rem] border-dashed border-[#fff]/10 no-underline bg-black/5 backdrop-blur-custom rounded-[0.375rem] cursor-pointer  text-white  md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-[#181818]"
+            className=" scroll-smooth  md:px-[2.5rem] px-[2.6rem] font-spacemono py-[0.95rem] border-dashed border-[#fff]/20 no-underline bg-black/5 backdrop-blur-custom rounded-[0.375rem] cursor-pointer  text-white  md:text-[1rem] text-[.7rem] leading-[1.2] tracking-[0.01em] transition-colors hover:bg-[#181818]"
           >
             Recent Work
           </Link>

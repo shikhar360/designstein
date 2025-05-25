@@ -115,7 +115,7 @@ export const CardAnimated = () => {
   }, []);
 
   return (
-    <section className="w-screen overflow-x-hidden  min-h-screen sticky-cards bg-[#121212]  scrollbar-hide  relative">
+    <section className="w-screen overflow-hidden  min-h-screen sticky-cards bg-[#121212]  scrollbar-hide  relative">
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
       {/* <Particles /> */}
       <div className="absolute z-10 min-w-[80vw] mt-20 top-10 md:left-32 left-10 font-inter ">

@@ -42,7 +42,7 @@ export default function Calender() {
   ];
   return (
     <div
-      className={`w-full overflow-x-hidden min-h-screen flex flex-col font-inter gap-8 items-center justify-center bg-[#1c1c1c] pb-20 `}
+      className={`w-full overflow-x-hidden min-h-screen flex flex-col font-inter gap-8 items-center justify-center bg-[#1c1c1c] pb-20 scrollbar-hide`}
       id="book"
     >
       <div className="z-20 flex flex-col min-w-[80vw] my-20 mx-auto">
@@ -53,10 +53,10 @@ export default function Calender() {
           <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
         </Copy>
       </div>
-      <div className={`md:w-full md:h-full mx-auto w-[75vw] h-[75vh]`}>
+      <div className={`md:w-full md:h-full mx-auto w-[75vw] h-[75vh] scrollbar-hide`}>
         <Cal
           namespace="30min"
-          calLink="letsdesignstein/30min"
+          calLink="designstein/30min"
           style={{ width: "100%", height: "100%", overflow: "scroll" }}
           config={{ layout: "month_view", theme: "dark" }}
         />

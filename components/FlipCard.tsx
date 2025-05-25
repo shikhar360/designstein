@@ -11,9 +11,11 @@ import Copy from "./Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface cardConfig {
-  text: string;
-}
+ export interface cardConfig {
+    heading: string;
+    subHeading: string;
+    cardimg: string;
+  }
 
 export default function FlipCard() {
   const lenisRef = useRef<React.ElementRef<typeof ReactLenis>>(null);
@@ -128,16 +130,25 @@ export default function FlipCard() {
 
   const card_config: cardConfig[] = [
     {
-      text: "Landing Pages Product Design",
+      
+       heading: 'Landing Pages',
+    subHeading: ' We design landing pages, product and brands from wireframes to visitors that converts into paying customers.',
+    cardimg: '/asset/landing.png'
     },
     {
-      text: "Logo Design  DesignSystem",
+        heading: 'Logo Design',
+    subHeading: ' We create unique and memorable logos that represent your brand + handover scalable design systems for your products.',
+    cardimg: '/asset/design.png'
     },
     {
-      text: "CopyWriting  UI UX",
+     heading: 'Copywriting',
+    subHeading: ' We create copy that resonates with your audience, drives engagement, and boosts conversions.',
+    cardimg: '/asset/copywriting.png'
     },
     {
-      text: "Code + No-Code Devlopment",
+      heading: 'Development',
+    subHeading: ' We build scalable, high-performance web apps using Next.js, Tailwind CSS + Use No-code tools like Framer, Webflow & more.',
+    cardimg: '/asset/code2.png'
     },
   ];
   return (
@@ -160,13 +171,13 @@ export default function FlipCard() {
         </Copy>
       </div>
       <section className="cards-new h-[100vh] w-full  relative">
-        {card_config.map(({ text }, index) => (
+        {card_config.map(( obj , index) => (
           <Card
             key={index}
             id={` card-${index + 1}`}
             frontSrc="/image.jpg"
             frontAlt="Card Image"
-            backText={text}
+            obj={obj}
             ref={(el) => {
               cardRefs.current[index] = el;
             }}

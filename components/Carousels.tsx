@@ -28,7 +28,7 @@ export default function Carousels() {
 
   return (
     <div
-      className={`h-30 w-[100vw]  flex group  text-sm givep overflow-x-hidden`}
+      className={`h-30 w-[100vw] bg-black flex group  text-sm givep overflow-x-hidden`}
       id="samplework"
     >
       {clone()}

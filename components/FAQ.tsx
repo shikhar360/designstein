@@ -88,11 +88,11 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className={`w-screen min-h-screen flex flex-col font-inter items-start justify-start `}
+      className={`w-screen min-h-screen flex flex-col font-inter items-start justify-start bg-black`}
     >
       <div className="z-20 flex flex-col min-w-[80vw] mt-20 mx-auto">
         <Copy>
-          <div className={`text-xl font-light `}> FAQs</div>
+          <div className={`text-xl font-light text-white`}> FAQs</div>
           <span className="block  border-b border-dashed border-[#fff]/30 mt-[0.5rem]" />
         </Copy>
       </div>
@@ -106,7 +106,7 @@ export default function FAQSection() {
               <div className="flex justify-end md:justify-end">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="flex items-center justify-center max-w-xs gap-2 bg-transparent border-none shadow-md cursor-pointer md:max-w-md"
+                  className="flex items-center justify-center max-w-xs gap-2 bg-transparent shadow-none border-none shadow-md cursor-pointer md:max-w-md"
                 >
                   <div
                     className=""

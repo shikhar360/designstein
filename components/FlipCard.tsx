@@ -152,7 +152,7 @@ export default function FlipCard() {
     },
   ];
   return (
-    <div ref={container} className={`container-new box-border mx-0  `}>
+    <div ref={container} className={`container-new box-border mx-0   bg-black  `}>
       {/* <section className="hero h-[100vh] w-full bg-purple-300  relative">
         <h1
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl `}
@@ -162,7 +162,7 @@ export default function FlipCard() {
       </section> */}
       <div className={`absolute  text-base mt-20 w-full `}>
         <Copy>
-          <h2 className={` mx-10 md:mx-32 font-normal md:text-3xl text-2xl `}>
+          <h2 className={` mx-10 md:mx-32 font-normal md:text-3xl text-2xl text-white `}>
             Services we offer
           </h2>
           <p

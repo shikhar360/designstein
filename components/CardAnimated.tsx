@@ -8,7 +8,7 @@ import Copy from "./Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const CardAnimated = () => {
+export default function CardAnimated () {
   const lenisRef = useRef<React.ElementRef<typeof ReactLenis>>(null);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function InteractiveGlobe() {
   return (
-    <main className={`relative flex flex-col items-start min-h-[120vh] justify-start md:px-20 px-10  font-inter bg-[#1a1a1a]`}>
+    <main className={`relative flex flex-col items-start min-h-[120vh] justify-start md:px-32 px-10  font-inter bg-[#1a1a1a]`}>
       {/* <Spline scene="https://prod.spline.design/K-KD2SeMaiAe4tmG/scene.splinecode" /> */}
   {/* <img src="/asset/misc/nav.png" alt="nav" className={`w-full  `} /> */}
       {/* <Spline scene="https://prod.spline.design/K-KD2SeMaiAe4tmG/scene.splinecode" /> */}
@@ -25,14 +25,14 @@ export default function InteractiveGlobe() {
 
        
       </div>
-        <div className={`z-20 flex flex-col items-center justify-center w-[80vw] bg-white/5 backdrop-blur-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl md:px-10 px-4 md:py-20 py-10  `}>
+        <div className={`z-20 flex flex-col items-center justify-center w-[80vw]  bg-white/5 backdrop-blur-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl md:px-10 px-4 md:py-20 py-10  `}>
 
-     <Copy>
-      <h2 className={`md:text-[64px]  text-2xl text-left font-semibold font-inter`}>Let&apos;s build the kind of site people never forget.</h2>
-      </Copy>
-      <Copy>
-      <h6 className={`text-left w-full pt-4 md:text-[25px] text-xs text-normal text-white/80`}>Because average doesn&apos;t inspire action — unforgettable does.</h6>
-     </Copy>
+
+      <span className={`md:text-6xl  text-2xl text-left font-semibold font-inter`}>Let&apos;s build the kind of site people never forget.</span>
+
+
+      <span className={`text-left w-full pt-4 md:text-xl text-xs text-normal text-white/80`}>Because average doesn&apos;t inspire action — unforgettable does.</span>
+
         <div className="flex pt-8 flex-row items-center justify-start w-full gap-2 mt-8 md:mt-4 ">
           <Link
             href={"#book"}

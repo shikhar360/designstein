@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import GravityPills from "@/components/GravityPills";
 import Hero from "@/components/Hero";
 import FlipCard from "@/components/FlipCard";
+import InteractiveGlobe from "@/components/InteractiveGlobe";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CardAnimated />
       <Calender />
       <FAQSection />
+      <InteractiveGlobe />
       <Footer />
     </div>
   );

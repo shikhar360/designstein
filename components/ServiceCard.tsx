@@ -27,7 +27,7 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, obj }
               className=""
             />
           </div>
-          <div className="flip-card-back absolute w-full h-full backface-hidden md:px-5 px-3  rounded-xl shadow-white overflow-hidden font-inter md:gap-3 gap-2 bg-[#fc8c14]  rotate-y-180 flex flex-col items-center justify-center">
+          <div className="flip-card-back absolute w-full h-full backface-hidden md:px-5 px-3  rounded-xl shadow-white overflow-hidden font-inter md:gap-4 gap-3 bg-[#fc8c14]  rotate-y-180 flex flex-col items-center justify-center">
             <p
               className={` md:text-2xl text-md text-start text-white font-bold`}
             >
@@ -39,7 +39,7 @@ const Card = forwardRef<HTMLDivElement, Iprops>(({ id, frontSrc, frontAlt, obj }
            
             src={obj.cardimg}
             alt={frontAlt+ " back"} 
-            className={`md:h-[150px] h-[75px] w-[75px] md:w-[150px] mix-blend-screen invert `}
+            className={`md:h-[140px] h-[75px] w-[75px] md:w-[140px] mix-blend-screen invert `}
             />
 
              <span className={`text-[10px] md:text-sm text-start opacity-80 `}>

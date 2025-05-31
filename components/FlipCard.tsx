@@ -133,22 +133,26 @@ export default function FlipCard() {
       
        heading: 'Landing Pages',
     subHeading: ' We design landing pages, product and brands from wireframes to visitors that converts into paying customers.',
-    cardimg: '/asset/landing.png'
+    cardimg: 'https://img.icons8.com/pastel-glyph/400/web-design--v2.png'
     },
     {
         heading: 'Logo Design',
     subHeading: ' We create unique and memorable logos that represent your brand + handover scalable design systems for your products.',
-    cardimg: '/asset/design.png'
-    },
-    {
-     heading: 'Copywriting',
+    cardimg: 'https://img.icons8.com/isometric-line/400/design.png'
+
+    
+  },
+  {
+    heading: 'Copywriting',
     subHeading: ' We create copy that resonates with your audience, drives engagement, and boosts conversions.',
-    cardimg: '/asset/copywriting.png'
+    cardimg: 'https://img.icons8.com/wired/400/pen.png'
+
     },
     {
       heading: 'Development',
     subHeading: ' We build scalable, high-performance web apps using Next.js, Tailwind CSS + Use No-code tools like Framer, Webflow & more.',
-    cardimg: '/asset/code2.png'
+    cardimg: 'https://img.icons8.com/pastel-glyph/400/code--v2.png'
+
     },
   ];
   return (
